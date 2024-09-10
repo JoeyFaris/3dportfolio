@@ -19,6 +19,8 @@ import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
+import java from "./tech/java.png";
+import python from "./tech/python.png"; 
 import threejs from "./tech/threejs.svg";
 
 import meta from "./company/meta.png";
@@ -28,7 +30,8 @@ import tesla from "./company/tesla.png";
 import montefiore from "./company/montefiore.png";
 import bscw from "./company/bscw.png";
 
-import carrent from "./carrent.png";
+import crawler from "./crawler.png";
+import twitter from "./twitter.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import sudoku from './sudoku.png'
@@ -41,6 +44,7 @@ export {
   creator,
   mobile,
   sudoku,
+  crawler,
   web,
   github,
   menu,
@@ -48,6 +52,8 @@ export {
   css,
   docker,
   figma,
+  java,
+  python,
   git,
   html,
   javascript,
@@ -64,7 +70,7 @@ export {
   pycube,
   bscw,
   tesla,
-  carrent,
+  twitter,
   jobit,
   tripguide,
 };

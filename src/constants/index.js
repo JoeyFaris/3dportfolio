@@ -4,7 +4,7 @@ import {
     creator,
     web,
     javascript,
-    typescript,
+    java,
     html,
     css,
     reactjs,
@@ -19,8 +19,10 @@ import {
     montefiore,
     three,
     bscw,
-    carrent,
+    python,
+    twitter,
     sudoku,
+    crawler,
     threejs,
   } from "../assets";
   
@@ -57,6 +59,16 @@ import {
       icon: backend,
     },
   ];
+
+  const testimonials = [
+    {
+      testimonial: "This is a test",
+      name: "Test Test",
+      designation: "CEO",
+      company: "Test Inc.",
+      image: "https://randomuser.me/api/portraits/men/1.jpg",
+    },
+  ];
   
   const technologies = [
     {
@@ -72,12 +84,16 @@ import {
       icon: javascript,
     },
     {
-      name: "TypeScript",
-      icon: typescript,
+      name: "Python",
+      icon: python,
     },
     {
       name: "React JS",
       icon: reactjs,
+    },
+    {
+      name: "React JS",
+      icon: java,
     },
     {
       name: "Redux Toolkit",
@@ -160,34 +176,50 @@ import {
     },
   ];
   
-  const testimonials = [
-    {
-      testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
-    },
-    {
-      testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
-    },
-    {
-      testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
-    },
-  ];
-  
   const projects = [
+    {
+      name: "Twitter / X Bot",
+      description:
+        "An automated bot that generates content from an LLM on Twitter/X about Software Engineering, Machine Learning, AI, Quantum Mechanics, and Neural Networks.",
+      tags: [
+        {
+          name: "python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Anthropic",
+          color: "green-text-gradient",
+        },
+        {
+          name: "OpenAI",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: twitter,
+      source_code_link: "https://github.com/JoeyFaris/xbot",
+      live_link: "https://x.com/quotestthoughts",
+    },
+    {
+      name: "Web Crawler To Email",
+      description:
+        "An automated bot that crawls websites and emails the data abstraction to a specified email address.",
+      tags: [
+        {
+          name: "java",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "OAuth2.0",
+          color: "green-text-gradient",
+        },
+        {
+          name: "JSoup",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: crawler,
+      source_code_link: "https://github.com/JoeyFaris/web-crawler",
+    },
     {
       name: "3D Website",
       description:
@@ -207,7 +239,7 @@ import {
         },
       ],
       image: three,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/JoeyFaris/3dportfolio",
     },
     {
       name: "Sudoku",
@@ -229,27 +261,7 @@ import {
       ],
       image: sudoku,
       source_code_link: "https://github.com/JoeyFaris/sudoku",
-    },
-    {
-      name: "Suite Management",
-      description:
-        "Real world software application that solves rent processing, lease storage, and maintenance postings for tenants. Built a local API with Active Record with associated tables and relational databases.",
-      tags: [
-        {
-          name: "javascript",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "ruby",
-          color: "green-text-gradient",
-        },
-        {
-          name: "materialUI",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: carrent,
-      source_code_link: "https://github.com/JoeyFaris/suite-management",
+      live_link: "https://sudoku.appsoftdev.com/",
     },
   ];
   

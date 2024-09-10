@@ -35,12 +35,14 @@ import twitter from "./twitter.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import sudoku from './sudoku.png'
+import textToSpeech from './textToSpeech.png'
 import three from './threejs.png'
 
 export {
   logo,
   three,
   backend,
+  textToSpeech,
   creator,
   mobile,
   sudoku,

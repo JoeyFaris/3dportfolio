@@ -22,6 +22,7 @@ import {
     python,
     twitter,
     sudoku,
+    textToSpeech,
     crawler,
     threejs,
   } from "../assets";
@@ -262,6 +263,31 @@ import {
       image: sudoku,
       source_code_link: "https://github.com/JoeyFaris/sudoku",
       live_link: "https://sudoku.appsoftdev.com/",
+    },
+    {
+      name: "Text-to-Speech Web Scraper (Under Maintenance)",
+      description:
+        "A web scraper that extracts content from articles and websites, then converts the text to speech for audio output. This tool allows for hands-free consumption of web content.",
+      tags: [
+        {
+          name: "python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "React",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Flask",
+          color: "pink-text-gradient",
+        },
+        {
+          name: "pyttsx3",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: textToSpeech, 
+      source_code_link: "https://github.com/JoeyFaris/aiscraper",
     },
   ];
   

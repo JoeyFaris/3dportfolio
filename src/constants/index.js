@@ -17,6 +17,7 @@ import {
     docker,
     pycube,
     montefiore,
+    colorPalette,
     three,
     bscw,
     python,
@@ -220,6 +221,28 @@ import {
       ],
       image: crawler,
       source_code_link: "https://github.com/JoeyFaris/web-crawler",
+    },
+    {
+      name: "Color Palette Generator",
+      description:
+        "An application that generates a color palette based on user photo upload using Python's color theory algorithms and displays them in an interactive React interface.",
+      tags: [
+        {
+          name: "python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "react",
+          color: "green-text-gradient",
+        },
+        {
+          name: "colormath",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: colorPalette,
+      source_code_link: "https://github.com/JoeyFaris/cp-fe",
+      live_link: "https://colorpaletteg.netlify.app/",
     },
     {
       name: "3D Website",

@@ -37,6 +37,7 @@ import tripguide from "./tripguide.png";
 import sudoku from './sudoku.png'
 import textToSpeech from './textToSpeech.png'
 import three from './threejs.png'
+import colorPalette from './colorPalette.png'
 
 export {
   logo,
@@ -50,6 +51,7 @@ export {
   web,
   github,
   menu,
+  colorPalette,
   close,
   css,
   docker,

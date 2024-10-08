@@ -22,6 +22,7 @@ import {
     bscw,
     python,
     twitter,
+    faceTracker,
     sudoku,
     textToSpeech,
     crawler,
@@ -183,6 +184,27 @@ import {
   ];
   
   const projects = [
+    {
+      name: "FaceTracker",
+      description:
+        "A face tracking application that uses the computer vision library to track the user's face and display the results in real-time.",
+      tags: [
+        {
+          name: "python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: 'mediapipe',
+          color: 'green-text-gradient',
+        },
+        {
+          name: 'cv2',
+          color: 'pink-text-gradient',
+        }
+      ],
+      image: faceTracker,
+      source_code_link: "https://github.com/JoeyFaris/facetracker-be",
+    },
     {
       name: "Twitter / X Bot",
       description:

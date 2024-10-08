@@ -34,6 +34,7 @@ import crawler from "./crawler.png";
 import twitter from "./twitter.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import faceTracker from "./faceTracker.png"; 
 import sudoku from './sudoku.png'
 import textToSpeech from './textToSpeech.png'
 import three from './threejs.png'
@@ -54,6 +55,7 @@ export {
   colorPalette,
   close,
   css,
+  faceTracker,
   docker,
   figma,
   java,

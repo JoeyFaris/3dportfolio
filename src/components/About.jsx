@@ -1,5 +1,4 @@
-import React from "react";
-import { Tilt } from "react-tilt";
+import React, { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -7,35 +6,8 @@ import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 
-const ServiceCard = ({title, icon, index}) => {
-  return (
-    <Tilt className='xs:w-[250px] w-full'>
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 250,
-        }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-      >
-        <img
-          src={icon}
-          alt='web-development'
-          className='w-24 h-24 object-contain'
-        />
-
-        <h3 className='text-white text-[20px] font-bold text-center'>
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
-  )
-}
+// Lazy load the ServiceCard component
+const ServiceCard = lazy(() => import("./ServiceCard"));
 
 const About = () => {
   return (
@@ -47,7 +19,6 @@ const About = () => {
         <h2 className={styles.sectionHeadText} >
           Overview.
         </h2>
-
       </motion.div>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
@@ -57,9 +28,10 @@ const About = () => {
       </motion.p>
       <div className="mt-20 flex flex-wrap gap-10" >
         {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+          <Suspense key={service.title} fallback={<div>Loading...</div>}>
+            <ServiceCard index={index} {...service} />
+          </Suspense>
         ))}
-
       </div>
     </>
   )

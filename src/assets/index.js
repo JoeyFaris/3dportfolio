@@ -34,11 +34,14 @@ import crawler from "./crawler.png";
 import twitter from "./twitter.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
-import faceTracker from "./faceTracker.png"; 
+import faceTracker from "./facetracker.png"; 
 import sudoku from './sudoku.png'
 import textToSpeech from './textToSpeech.png'
 import three from './threejs.png'
 import colorPalette from './colorPalette.png'
+import linkedin from './linkedin.png'
+import resume from './resume.png'
+import resumePDF from './JoeyFarisResume.pdf'
 
 export {
   logo,
@@ -79,4 +82,7 @@ export {
   twitter,
   jobit,
   tripguide,
+  linkedin,
+  resume,
+  resumePDF,
 };

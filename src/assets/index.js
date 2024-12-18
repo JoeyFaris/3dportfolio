@@ -43,6 +43,36 @@ import linkedin from './linkedin.png'
 import resume from './resume.png'
 import resumePDF from './JoeyFarisResume.pdf'
 
+export const loadTechIcons = () => Promise.all([
+  import("./tech/html.png"),
+  import("./tech/css.png"),
+  import("./tech/javascript.png"),
+  import("./tech/docker.png"),
+  import("./tech/figma.png"),
+  import("./tech/git.png"),
+  import("./tech/mongodb.png"),
+  import("./tech/nodejs.png"),
+  import("./tech/reactjs.png"),
+  import("./tech/redux.png"),
+  import("./tech/tailwind.png"),
+  import("./tech/typescript.png"),
+  import("./tech/java.png"),
+  import("./tech/python.png"),
+  import("./tech/threejs.svg")
+]);
+
+export const loadProjectImages = () => Promise.all([
+  import("./crawler.png"),
+  import("./twitter.png"),
+  import("./jobit.png"),
+  import("./tripguide.png"),
+  import("./facetracker.png"),
+  import("./sudoku.png"),
+  import("./textToSpeech.png"),
+  import("./threejs.png"),
+  import("./colorPalette.png")
+]);
+
 export {
   logo,
   three,

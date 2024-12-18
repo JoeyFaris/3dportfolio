@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
@@ -34,4 +34,3 @@ const ServiceCard = ({ index, title, icon }) => {
 }
 
 export default ServiceCard;
-

@@ -1,51 +1,63 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, memo, useMemo } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Decal, Float, OrbitControls, Preload, useTexture } from '@react-three/drei'
 import CanvasLoader from '../Loader'
 
-const Ball = (props) => {
+const Ball = memo((props) => {
   const [decal] = useTexture([props.imgUrl])
+
+  const meshProps = useMemo(() => ({
+    castShadow: true,
+    receiveShadow: true,
+    scale: 2.75
+  }), [])
+
+  const materialProps = useMemo(() => ({
+    color: "#fff8eb",
+    polygonOffset: true,
+    polygonOffsetFactor: -5,
+    flatShading: true
+  }), [])
+
+  const decalProps = useMemo(() => ({
+    position: [0, 0, 1],
+    rotation: [2 * Math.PI, 0, 6.25],
+    flatShading: true,
+    map: decal
+  }), [decal])
+
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={0.25} />
       <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShadow scale={2.75}>
+      <mesh {...meshProps}>
         <icosahedronGeometry args={[1, 1]} />
-        <meshStandardMaterial 
-        color="#fff8eb"
-        polygonOffset
-        polygonOffsetFactor={-5}
-        flatShading
-        />
-        <Decal 
-        position={[0, 0, 1]}
-        rotation={[2 * Math.PI, 0, 6.25]}
-        flatShading
-        map={decal}
-        />
-
+        <meshStandardMaterial {...materialProps} />
+        <Decal {...decalProps} />
       </mesh>
     </Float>
   )
-}
+})
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = memo(({ icon }) => {
+  const canvasProps = useMemo(() => ({
+    frameloop: 'demand',
+    gl: { preserveDrawingBuffer: true }
+  }), [])
+
+  const controlsProps = useMemo(() => ({
+    enableZoom: false
+  }), [])
+
   return (
-    <Canvas
-    frameloop='demand'
-    gl={{ preserveDrawingBuffer: true }}
-    >
-    <Suspense fallback={<CanvasLoader />}>
-      <OrbitControls
-        enableZoom={false}
-      />
-      <Ball imgUrl={icon} />
-    </Suspense>
-
-    <Preload all />
-  </Canvas>
+    <Canvas {...canvasProps}>
+      <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls {...controlsProps} />
+        <Ball imgUrl={icon} />
+      </Suspense>
+      <Preload all />
+    </Canvas>
   )
-
-}
+})
 
 export default BallCanvas

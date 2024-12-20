@@ -43,9 +43,12 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    // Use passive event listener for better scroll performance
+    // Add passive flag to scroll listener for better performance
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [handleScroll]);
 
   // Memoize click handlers

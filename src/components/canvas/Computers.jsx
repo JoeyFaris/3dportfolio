@@ -40,16 +40,21 @@ const ComputersCanvas = () => {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");
-
     setIsMobile(mediaQuery.matches);
 
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
+    const handleScroll = () => {
+      // Scroll handling logic
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     mediaQuery.addEventListener("change", handleMediaQueryChange);
 
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);

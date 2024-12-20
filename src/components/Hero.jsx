@@ -35,6 +35,19 @@ const Hero = () => {
     });
   }, []);
 
+  // Inside Hero component, add passive scroll listener if needed
+  useEffect(() => {
+    const handleScroll = () => {
+      // Your scroll handling logic
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const linkClass = "bg-gray-800 py-3 px-4 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary flex items-center";
 
   return (

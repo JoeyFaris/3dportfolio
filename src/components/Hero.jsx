@@ -1,7 +1,28 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { github, linkedin, resume, resumePDF } from "../assets";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
+
+// Memoize links to prevent unnecessary re-renders
+const SocialLink = memo(({ href, imgSrc, imgAlt, text, className, download }) => (
+  <a 
+    href={href}
+    target={download ? undefined : "_blank"} 
+    rel={download ? undefined : "noopener noreferrer"}
+    className={className}
+    download={download}
+  >
+    <img 
+      src={imgSrc} 
+      alt={imgAlt} 
+      className="w-6 h-6 mr-2"
+      loading="lazy"
+      decoding="async"
+      fetchPriority="low"
+    />
+    {text}
+  </a>
+));
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -9,6 +30,8 @@ const Hero = () => {
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  const linkClass = "bg-gray-800 py-3 px-4 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary flex items-center";
 
   return (
     <section className={`relative w-full h-screen mx-auto`}>
@@ -45,22 +68,35 @@ const Hero = () => {
             <span className="text-2xl font-extrabold mr-2">⇩</span>
             Dive In
           </a>
-          <a href="https://github.com/joeyfaris" target="_blank" rel="noopener noreferrer" className="bg-gray-800 py-3 px-4 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary flex items-center">
-            <img src={github} alt="GitHub" className="w-6 h-6 mr-2" />
-            GitHub
-          </a>
-          <a href="https://linkedin.com/in/Joey-Faris" target="_blank" rel="noopener noreferrer" className="bg-gray-800 py-3 px-4 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary flex items-center">
-            <img src={linkedin} alt="LinkedIn" className="w-6 h-6 mr-2" />
-            LinkedIn
-          </a>
-          <a href={resumePDF} download  className="bg-gray-800 py-3 px-4 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary flex items-center">
-            <img src={resume} alt="Resume" className="w-6 h-6 mr-2" />
-            Resume
-          </a>
+          
+          <SocialLink 
+            href="https://github.com/joeyfaris"
+            imgSrc={github}
+            imgAlt="GitHub"
+            text="GitHub"
+            className={linkClass}
+          />
+          
+          <SocialLink 
+            href="https://linkedin.com/in/Joey-Faris"
+            imgSrc={linkedin}
+            imgAlt="LinkedIn"
+            text="LinkedIn"
+            className={linkClass}
+          />
+          
+          <SocialLink 
+            href={resumePDF}
+            imgSrc={resume}
+            imgAlt="Resume"
+            text="Resume"
+            className={linkClass}
+            download
+          />
         </motion.div>
       </div>
     </section>
   );
 };
 
-export default Hero;
+export default memo(Hero);

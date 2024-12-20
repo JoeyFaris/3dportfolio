@@ -27,8 +27,12 @@ const SocialLink = memo(({ href, imgSrc, imgAlt, text, className, download }) =>
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
+  // Preload critical text content
   useEffect(() => {
-    setIsLoaded(true);
+    // Set loaded state after initial render
+    requestAnimationFrame(() => {
+      setIsLoaded(true);
+    });
   }, []);
 
   const linkClass = "bg-gray-800 py-3 px-4 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary flex items-center";
@@ -36,23 +40,21 @@ const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col items-start justify-center`}>
-        <motion.h1 
+        {/* Prioritize main heading render */}
+        <h1 
           className={`${styles.heroHeadText} text-white font-black`}
-          initial={{ y: -50, opacity: 0 }}
-          animate={isLoaded ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 0.5, type: "spring", stiffness: 100 }}
         >
           Hi, I'm Joey <br />
           <span className="text-[#915eff]">
             Software Engineer
           </span>
-        </motion.h1>
+        </h1>
         
         <motion.p 
           className={`${styles.heroSubText} mt-4 text-white-100`}
           initial={{ y: 50, opacity: 0 }}
           animate={isLoaded ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 1, type: "spring", stiffness: 100 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
         >
           Explore my projects, skills, and journey <br className="sm:block hidden" />
           through the ever-evolving world of technology
@@ -60,9 +62,9 @@ const Hero = () => {
 
         <motion.div
           className="mt-10 flex flex-wrap gap-4"
-          initial={{ scale: 0 }}
-          animate={isLoaded ? { scale: 1 } : {}}
-          transition={{ duration: 0.5, delay: 1.5, type: "spring", stiffness: 200 }}
+          initial={{ opacity: 0 }}
+          animate={isLoaded ? { opacity: 1 } : {}}
+          transition={{ duration: 0.3, delay: 0.4 }}
         >
           <a href="#about" className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary flex items-center">
             <span className="text-2xl font-extrabold mr-2">⇩</span>

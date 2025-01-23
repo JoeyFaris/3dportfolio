@@ -35,6 +35,7 @@ import twitter from "./twitter.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import faceTracker from "./facetracker.png"; 
+import dockerLogo from "./docker_logo.png";
 import sudoku from './sudoku.png'
 import textToSpeech from './textToSpeech.png'
 import three from './threejs.png'
@@ -67,6 +68,7 @@ export const loadProjectImages = () => Promise.all([
   import("./jobit.png"),
   import("./tripguide.png"),
   import("./facetracker.png"),
+  import("./docker_logo.png"),
   import("./sudoku.png"),
   import("./textToSpeech.png"),
   import("./threejs.png"),
@@ -89,6 +91,7 @@ export {
   close,
   css,
   faceTracker,
+  dockerLogo,
   docker,
   figma,
   java,

@@ -23,8 +23,8 @@ import {
     python,
     twitter,
     faceTracker,
+    dockerLogo,
     sudoku,
-    textToSpeech,
     crawler,
     threejs,
   } from "../assets";
@@ -185,6 +185,27 @@ import {
   
   const projects = [
     {
+      name: "Docker Optimizer",
+      description:
+        "An application that performs dynamic analysis on a docker image's file systerm to reduce image size and reduce latency",
+      tags: [
+        {
+          name: "dynamic analysis",
+          color: "blue-text-gradient",
+        },
+        {
+          name: 'docker SDK',
+          color: 'green-text-gradient',
+        },
+        {
+          name: 'dtrace',
+          color: 'pink-text-gradient',
+        }
+      ],
+      image: dockerLogo,
+      source_code_link: "https://github.com/JoeyFaris/docker-optimizer",
+    },
+    {
       name: "FaceTracker",
       description:
         "A face tracking application that uses the computer vision library to track the user's face and display the results in real-time.",
@@ -312,31 +333,6 @@ import {
       image: sudoku,
       source_code_link: "https://github.com/JoeyFaris/sudoku",
       live_link: "https://sudoku.appsoftdev.com/",
-    },
-    {
-      name: "Text-to-Speech Web Scraper (Under Maintenance)",
-      description:
-        "A web scraper that extracts content from articles and websites, then converts the text to speech for audio output. This tool allows for hands-free consumption of web content.",
-      tags: [
-        {
-          name: "python",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "React",
-          color: "green-text-gradient",
-        },
-        {
-          name: "Flask",
-          color: "pink-text-gradient",
-        },
-        {
-          name: "pyttsx3",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: textToSpeech, 
-      source_code_link: "https://github.com/JoeyFaris/aiscraper",
     },
   ];
   

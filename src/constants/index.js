@@ -20,6 +20,7 @@ import {
     colorPalette,
     three,
     bscw,
+    ash,
     python,
     twitter,
     faceTracker,
@@ -138,11 +139,25 @@ import {
   
   const experiences = [
     {
+      title: "Frontend Engineer",
+      company_name: "American Specialty Health",
+      icon: ash,
+      iconBg: "#E6DEDD",
+      date: "May 2025 - Present",
+      points: [
+        "Led frontend architecture for four major platforms supporting 100,000+ daily users and 20,000+ programs.",
+        "Built and maintained a modular component library using MUI and Storybook, standardizing UI across multiple product domains.",
+        "Implemented a testing infrastructure (Jest, RTL, MSW) achieving 80%+ coverage and enabling reliable API mocking across microservices.",
+        "Developed advanced GraphQL mock handlers with dynamic responses, latency simulation, and error scenarios to accelerate development.",
+        "Optimized CI/CD pipelines using Azure DevOps and YAML, enabling multi-environment deployments and bundle performance analysis.",
+      ],
+    },
+    {
       title: "Software Developer",
       company_name: "Pycube",
       icon: pycube,
       iconBg: "#383E56",
-      date: "Septembebr 2022 - Present",
+      date: "September 2022 - May 2025",
       points: [
         "Developed front-end applications with JavaScript, React, Redux, HTML, and CSS for engaging user interfaces.",
         "Implemented server-side logic and RESTful APIs using Node.js, Express.js, PostgreSQL, and MongoDB for efficient data management.",
@@ -157,7 +172,7 @@ import {
       company_name: "MonteFiore Medical Center",
       icon: montefiore,
       iconBg: "#E6DEDD",
-      date: "June 2023 - Present",
+      date: "June 2023 - January 2025",
       points: [
         "Implemented an invoice validation service using a five-step processing workflow using React hooks and Redux Toolkit.",
         "Designed and implemented API endpoints using Express.js, applying the MVC design pattern for structured layer-wise functionality.",

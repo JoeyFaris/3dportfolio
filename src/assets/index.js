@@ -29,6 +29,7 @@ import pycube from "./company/pycube.png";
 import tesla from "./company/tesla.png";
 import montefiore from "./company/montefiore.png";
 import bscw from "./company/bscw.png";
+import ash from "./company/ash.svg";
 
 import crawler from "./crawler.png";
 import twitter from "./twitter.png";
@@ -111,6 +112,7 @@ export {
   shopify,
   pycube,
   bscw,
+  ash,
   tesla,
   twitter,
   jobit,
